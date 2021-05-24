@@ -7,7 +7,7 @@ strategy: RollingUpdate
 
 restartPolicy: Always
 nameOverride: ""
-fullnameOverride: ""
+#fullnameOverride: ""
 
 service:
   type: NodePort
@@ -28,9 +28,10 @@ autoscaling:
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
 
-secrets:
-  user: asd
-  host: asd
-  port: asd
-  database: asd
-  artifactRoot: asd
+dbConfig:
+  host: "mlflow-mariadb.mlflow.svc.cluster.local"
+  port: "3306"
+  database: ""
+  username: ""
+  password: ""
+  artifactRoot: ""
