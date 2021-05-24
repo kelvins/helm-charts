@@ -49,3 +49,10 @@ Selector labels
 app.kubernetes.io/name: {{ include "mlflow.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{/*
+Create a random password.
+*/}}
+{{- define "mlflow.randomPassword" -}}
+{{- randAlphaNum 24 | nospace -}}
+{{- end }}

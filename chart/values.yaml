@@ -27,3 +27,10 @@ autoscaling:
   minReplicas: 2
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
+
+secrets:
+  user: asd
+  host: asd
+  port: asd
+  database: asd
+  artifactRoot: asd
