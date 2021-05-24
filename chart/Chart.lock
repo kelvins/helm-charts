@@ -2,5 +2,8 @@ dependencies:
 - name: mariadb
   repository: https://charts.bitnami.com/bitnami
   version: 9.3.12
-digest: sha256:8b56884a3f764456cc41c8439483dba7d65ba8c985d46445f6c9ed298a442869
-generated: "2021-05-23T21:46:51.545184-03:00"
+- name: minio
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.7.13
+digest: sha256:290f94b793659a97193c2fe9ede974638de5ae91c524fa5325a01cdad29831fd
+generated: "2021-05-23T22:57:12.126906-03:00"

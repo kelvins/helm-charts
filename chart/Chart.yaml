@@ -19,6 +19,10 @@ dependencies:
 - name: mariadb
   version: 9.3.12
   repository: https://charts.bitnami.com/bitnami
-  condition: mariadb.enabled
   tags:
     - database
+- name: minio
+  version: 6.7.13
+  repository: https://charts.bitnami.com/bitnami
+  tags:
+    - storage
