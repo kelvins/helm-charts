@@ -1,0 +1,29 @@
+image:
+  repository: mlflow
+  pullPolicy: Always
+  tag: ""
+
+strategy: RollingUpdate
+
+restartPolicy: Always
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5000
+
+resources:
+  limits:
+    cpu: 800m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 20
+  targetCPUUtilizationPercentage: 70
