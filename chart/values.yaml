@@ -10,8 +10,8 @@ nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: NodePort
-  port: 80
+  type: ClusterIP
+  port: 5000
   targetPort: 5000
 
 resources:
@@ -24,15 +24,15 @@ resources:
 
 autoscaling:
   enabled: true
-  minReplicas: 2
-  maxReplicas: 20
+  minReplicas: 1
+  maxReplicas: 10
   targetCPUUtilizationPercentage: 70
 
 dbConfig:
-  host: "mlflow-mariadb.mlflow.svc.cluster.local"
+  host: "dorothy-mariadb.mlflow.svc.cluster.local"
   port: "3306"
   database: ""
   username: ""
   password: ""
   artifactRoot: "s3://datalake/mlflow/artifacts"
-  artifactRoot: "minio.mlflow.svc.cluster.local:9000"
+  #artifactRoot: "minio.mlflow.svc.cluster.local:9000"
