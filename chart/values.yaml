@@ -1,13 +1,13 @@
 image:
-  repository: mlflow
+  repository: kelvinsp/mlflow
   pullPolicy: Always
-  tag: ""
+  tag: "latest"
 
 strategy: RollingUpdate
 
 restartPolicy: Always
 nameOverride: ""
-#fullnameOverride: ""
+fullnameOverride: ""
 
 service:
   type: NodePort
@@ -34,4 +34,5 @@ dbConfig:
   database: ""
   username: ""
   password: ""
-  artifactRoot: ""
+  artifactRoot: "s3://datalake/mlflow/artifacts"
+  artifactRoot: "minio.mlflow.svc.cluster.local:9000"

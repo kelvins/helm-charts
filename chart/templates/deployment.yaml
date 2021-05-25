@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mlflow.fullname" . }}-deployment
+  name: {{ include "mlflow.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "mlflow.labels" . | nindent 4 }}
