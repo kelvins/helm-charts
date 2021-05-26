@@ -3,21 +3,22 @@
 ## Install HELM chart
 
 ```
-helm install mlflow \
+helm install dorothy \
     --set mariadb.auth.rootPassword="root" \
-    --set mariadb.auth.database="mlflow-db" \
     --set mariadb.auth.username="mlflow-user" \
     --set mariadb.auth.password="mlflow-pass" \
     --set minio.accessKey.password=access-key \
     --set minio.secretKey.password=secret-key \
-    --set dbConfig.database="mlflow-db" \
     --set dbConfig.username="mlflow-user" \
     --set dbConfig.password="mlflow-pass" \
     --namespace="mlflow" \
     --create-namespace \
-    --dry-run \
     chart
 ```
+
+## Notes
+
+- It is necessary to create the `mlflow` bucket on minio manually.
 
 ## References
 
