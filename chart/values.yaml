@@ -28,11 +28,14 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
 
+mariadb:
+  auth:
+    database: "mlflow"
+
 dbConfig:
   host: "dorothy-mariadb.mlflow.svc.cluster.local"
   port: "3306"
-  database: ""
+  database: "mlflow"
   username: ""
   password: ""
-  artifactRoot: "s3://datalake/mlflow/artifacts"
-  #artifactRoot: "minio.mlflow.svc.cluster.local:9000"
+  artifactRoot: "s3://mlflow"

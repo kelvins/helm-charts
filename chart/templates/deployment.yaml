@@ -67,3 +67,9 @@ spec:
                 secretKeyRef:
                   name: {{ include "mlflow.fullname" . }}
                   key: artifactRoot
+            - name: AWS_ACCESS_KEY_ID
+              value: "access-key"
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "secret-key"
+            - name: MLFLOW_S3_ENDPOINT_URL
+              value: "http://dorothy-minio.mlflow.svc.cluster.local:9000"
