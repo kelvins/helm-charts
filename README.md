@@ -9,8 +9,6 @@ helm install dorothy \
     --set mariadb.auth.password="mlflow-pass" \
     --set minio.accessKey.password=access-key \
     --set minio.secretKey.password=secret-key \
-    --set dbConfig.username="mlflow-user" \
-    --set dbConfig.password="mlflow-pass" \
     --namespace="mlflow" \
     --create-namespace \
     chart
