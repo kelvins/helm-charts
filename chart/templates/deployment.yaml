@@ -43,10 +43,7 @@ spec:
                   name: {{ include "mlflow.fullname" . }}
                   key: backend-store-uri
             - name: ARTIFACT_ROOT
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "mlflow.fullname" . }}
-                  key: artifact-root
+              value: {{ .Values.artifact.root }}
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:
@@ -58,4 +55,4 @@ spec:
                   name: {{ include "mlflow.fullname" . }}
                   key: secret-key
             - name: MLFLOW_S3_ENDPOINT_URL
-              value: "http://dorothy-minio.mlflow.svc.cluster.local:9000"
+              value: {{ include "mlflow.storageHost" . }}

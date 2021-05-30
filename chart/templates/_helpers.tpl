@@ -51,8 +51,23 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
+Storage HOST
+*/}}
+{{- define "mlflow.storageHost" -}}
+{{- printf "http://%s-minio.%s.svc.cluster.local:%s" .Release.Name .Release.Namespace .Values.minio.containerPort }}
+{{- end }}
+
+{{/*
+Database HOST
+*/}}
+{{- define "mlflow.databaseHost" -}}
+{{- printf "%s-postgresql.%s.svc.cluster.local" .Release.Name .Release.Namespace }}
+{{- end }}
+
+{{/*
 Backend Store URI
 */}}
 {{- define "mlflow.backendStoreURI" -}}
-{{- printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword .Values.postgresql.postgresqlHost .Values.postgresql.postgresqlPort .Values.postgresql.postgresqlDatabase }}
+{{- $host := include "mlflow.databaseHost" . }}
+{{- printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword $host .Values.postgresql.postgresqlPort .Values.postgresql.postgresqlDatabase }}
 {{- end }}

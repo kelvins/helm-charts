@@ -34,12 +34,12 @@ minio:
   secretKey:
     password: "secret-key"
   defaultBuckets: "mlflow"
+  containerPort: "9000"
 
 postgresql:
-  postgresqlUsername: ""
-  postgresqlPassword: ""
+  postgresqlUsername: "mlflow-user"
+  postgresqlPassword: "mlflow-pass"
   postgresqlDatabase: "mlflow"
-  postgresqlHost: "dorothy-postgresql.mlflow.svc.cluster.local"
   postgresqlPort: "5432"
 
 artifact:

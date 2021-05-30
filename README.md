@@ -24,6 +24,10 @@ helm install dorothy \
 - PostgreSQL: https://artifacthub.io/packages/helm/bitnami/postgresql
 - MinIO: https://artifacthub.io/packages/helm/bitnami/minio
 
+## Docs
+
+Generate docs: https://github.com/norwoodj/helm-docs
+
 ## References
 
 - Mlflow Tracking: https://www.mlflow.org/docs/latest/tracking.html
