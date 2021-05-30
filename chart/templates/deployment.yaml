@@ -37,39 +37,25 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            - name: HOST
+            - name: BACKEND_STORE_URI
               valueFrom:
                 secretKeyRef:
                   name: {{ include "mlflow.fullname" . }}
-                  key: host
-            - name: PORT
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "mlflow.fullname" . }}
-                  key: port
-            - name: DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "mlflow.fullname" . }}
-                  key: database
-            - name: USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "mlflow.fullname" . }}
-                  key: username
-            - name: PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "mlflow.fullname" . }}
-                  key: password
+                  key: backend-store-uri
             - name: ARTIFACT_ROOT
               valueFrom:
                 secretKeyRef:
                   name: {{ include "mlflow.fullname" . }}
-                  key: artifactRoot
+                  key: artifact-root
             - name: AWS_ACCESS_KEY_ID
-              value: "access-key"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "mlflow.fullname" . }}
+                  key: access-key
             - name: AWS_SECRET_ACCESS_KEY
-              value: "secret-key"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "mlflow.fullname" . }}
+                  key: secret-key
             - name: MLFLOW_S3_ENDPOINT_URL
               value: "http://dorothy-minio.mlflow.svc.cluster.local:9000"

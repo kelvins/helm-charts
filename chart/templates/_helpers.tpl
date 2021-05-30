@@ -49,3 +49,10 @@ Selector labels
 app.kubernetes.io/name: {{ include "mlflow.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{/*
+Backend Store URI
+*/}}
+{{- define "mlflow.backendStoreURI" -}}
+{{- printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword .Values.postgresql.postgresqlHost .Values.postgresql.postgresqlPort .Values.postgresql.postgresqlDatabase }}
+{{- end }}

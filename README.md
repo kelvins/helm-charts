@@ -4,13 +4,14 @@
 
 ```
 helm install dorothy \
-    --set mariadb.auth.rootPassword="root" \
-    --set mariadb.auth.username="mlflow-user" \
-    --set mariadb.auth.password="mlflow-pass" \
+    --set postgresql.postgresqlUsername="mlflow-user" \
+    --set postgresql.postgresqlPassword="mlflow-pass" \
+    --set postgresql.postgresqlDatabase="mlflow" \
     --set minio.accessKey.password=access-key \
     --set minio.secretKey.password=secret-key \
     --namespace="mlflow" \
     --create-namespace \
+    --dry-run --debug \
     chart
 ```
 

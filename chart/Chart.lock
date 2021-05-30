@@ -1,9 +1,9 @@
 dependencies:
-- name: mariadb
+- name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 9.3.12
+  version: 10.4.6
 - name: minio
   repository: https://charts.bitnami.com/bitnami
   version: 6.7.13
-digest: sha256:290f94b793659a97193c2fe9ede974638de5ae91c524fa5325a01cdad29831fd
-generated: "2021-05-23T22:57:12.126906-03:00"
+digest: sha256:23c18ada9e1efcdb9404cf0432540b2e01a6da03e466a434af39e5cb594c4e80
+generated: "2021-05-30T17:07:49.720497-03:00"

@@ -28,13 +28,18 @@ autoscaling:
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
 
-mariadb:
-  auth:
-    database: "mlflow"
-    username: ""
-    password: ""
+minio:
+  accessKey:
+    password: "access-key"
+  secretKey:
+    password: "secret-key"
 
-dbConfig:
-  host: "dorothy-mariadb.mlflow.svc.cluster.local"
-  port: "3306"
-  artifactRoot: "s3://mlflow"
+postgresql:
+  postgresqlUsername: ""
+  postgresqlPassword: ""
+  postgresqlDatabase: "mlflow"
+  postgresqlHost: "dorothy-postgresql.mlflow.svc.cluster.local"
+  postgresqlPort: "5432"
+
+artifact:
+  root: "s3://mlflow"
