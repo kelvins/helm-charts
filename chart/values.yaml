@@ -33,6 +33,7 @@ minio:
     password: "access-key"
   secretKey:
     password: "secret-key"
+  defaultBuckets: "mlflow"
 
 postgresql:
   postgresqlUsername: ""
