@@ -19,6 +19,11 @@ helm install dorothy \
 
 - It is necessary to create the `mlflow` bucket on minio manually.
 
+## Dependencies
+
+- PostgreSQL: https://artifacthub.io/packages/helm/bitnami/postgresql
+- MinIO: https://artifacthub.io/packages/helm/bitnami/minio
+
 ## References
 
 - Mlflow Tracking: https://www.mlflow.org/docs/latest/tracking.html
