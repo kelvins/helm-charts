@@ -3,7 +3,7 @@
 ## Install HELM chart
 
 ```
-helm install dorothy \
+helm install \
     --set postgresql.postgresqlUsername="mlflow-user" \
     --set postgresql.postgresqlPassword="mlflow-pass" \
     --set postgresql.postgresqlDatabase="mlflow" \
@@ -11,7 +11,7 @@ helm install dorothy \
     --set minio.secretKey.password=secret-key \
     --namespace="mlflow" \
     --create-namespace \
-    --dry-run --debug \
+    --generate-name \
     chart
 ```
 
