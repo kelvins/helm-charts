@@ -1,14 +1,14 @@
 # Mlflow Server
 
-## Install HELM chart
+## Install chart
 
 ```
 helm install \
     --set postgresql.postgresqlUsername="mlflow-user" \
     --set postgresql.postgresqlPassword="mlflow-pass" \
     --set postgresql.postgresqlDatabase="mlflow" \
-    --set minio.accessKey.password=access-key \
-    --set minio.secretKey.password=secret-key \
+    --set minio.accessKey.password="access-key" \
+    --set minio.secretKey.password="secret-key" \
     --namespace="mlflow" \
     --create-namespace \
     --generate-name \
@@ -23,7 +23,3 @@ helm install \
 ## Docs
 
 Generate docs: https://github.com/norwoodj/helm-docs
-
-## References
-
-- Mlflow Tracking: https://www.mlflow.org/docs/latest/tracking.html
