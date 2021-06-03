@@ -24,23 +24,32 @@ resources:
 
 autoscaling:
   enabled: true
+  # -- Min replicas for the HPA
   minReplicas: 1
+  # -- Max replicas for the HPA
   maxReplicas: 10
   targetCPUUtilizationPercentage: 70
 
 minio:
   accessKey:
+    # -- MinIO access key password
     password: "access-key"
   secretKey:
+    # -- MinIO secret key password
     password: "secret-key"
+  # -- Buckets to be automatically created
   defaultBuckets: "mlflow"
   containerPort: "9000"
 
 postgresql:
+  # -- Database username
   postgresqlUsername: "mlflow-user"
+  # -- Database password
   postgresqlPassword: "mlflow-pass"
+  # -- Database name
   postgresqlDatabase: "mlflow"
   postgresqlPort: "5432"
 
 artifact:
+  # -- Bucket path to store mlflow artifacts
   root: "s3://mlflow"

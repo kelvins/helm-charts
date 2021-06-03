@@ -2,7 +2,7 @@
 
 ![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.17.0](https://img.shields.io/badge/AppVersion-1.17.0-informational?style=flat-square)
 
-A Helm chart for Kubernetes
+A Helm chart to deploy Mlflow server using MinIO as storage and PostgreSQL as database.
 
 ## Installing the Chart
 
@@ -25,24 +25,24 @@ helm install \
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| artifact.root | string | `"s3://mlflow"` |  |
+| artifact.root | string | `"s3://mlflow"` | Bucket path to store mlflow artifacts |
 | autoscaling.enabled | bool | `true` |  |
-| autoscaling.maxReplicas | int | `10` |  |
-| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.maxReplicas | int | `10` | Max replicas for the HPA |
+| autoscaling.minReplicas | int | `1` | Min replicas for the HPA |
 | autoscaling.targetCPUUtilizationPercentage | int | `70` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"kelvinsp/mlflow"` |  |
 | image.tag | string | `"latest"` |  |
-| minio.accessKey.password | string | `"access-key"` |  |
+| minio.accessKey.password | string | `"access-key"` | MinIO access key password |
 | minio.containerPort | string | `"9000"` |  |
-| minio.defaultBuckets | string | `"mlflow"` |  |
-| minio.secretKey.password | string | `"secret-key"` |  |
+| minio.defaultBuckets | string | `"mlflow"` | Buckets to be automatically created |
+| minio.secretKey.password | string | `"secret-key"` | MinIO secret key password |
 | nameOverride | string | `""` |  |
-| postgresql.postgresqlDatabase | string | `"mlflow"` |  |
-| postgresql.postgresqlPassword | string | `"mlflow-pass"` |  |
+| postgresql.postgresqlDatabase | string | `"mlflow"` | Database name |
+| postgresql.postgresqlPassword | string | `"mlflow-pass"` | Database password |
 | postgresql.postgresqlPort | string | `"5432"` |  |
-| postgresql.postgresqlUsername | string | `"mlflow-user"` |  |
+| postgresql.postgresqlUsername | string | `"mlflow-user"` | Database username |
 | resources.limits.cpu | string | `"800m"` |  |
 | resources.limits.memory | string | `"512Mi"` |  |
 | resources.requests.cpu | string | `"100m"` |  |
