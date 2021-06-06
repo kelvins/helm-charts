@@ -18,11 +18,11 @@ Get the application URL by running these commands:
 {{- end }}
 
 Storage (MinIO)
-Artifact Root: {{ .Values.artifact.root }}
-Access Key: {{ .Values.minio.accessKey.password }}
-Secret Key: {{ .Values.minio.secretKey.password }}
+  Artifact Root: {{ .Values.artifact.root }}
+  Access Key: {{ .Values.minio.accessKey.password }}
+  Secret Key: {{ .Values.minio.secretKey.password }}
 
 Database (PostgreSQL)
-Database: {{ .Values.postgresql.postgresqlDatabase }}
-Username: {{ .Values.postgresql.postgresqlUsername }}
-Password: {{ .Values.postgresql.postgresqlPassword }}
+  Database: {{ .Values.postgresql.postgresqlDatabase }}
+  Username: {{ .Values.postgresql.postgresqlUsername }}
+  Password: {{ .Values.postgresql.postgresqlPassword }}
