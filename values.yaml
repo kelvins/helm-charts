@@ -28,6 +28,7 @@ autoscaling:
   minReplicas: 1
   # -- Max replicas for the HPA
   maxReplicas: 10
+  # -- Target CPU utilization percentage
   targetCPUUtilizationPercentage: 70
 
 minio:
@@ -39,6 +40,7 @@ minio:
     password: "secret-key"
   # -- Buckets to be automatically created
   defaultBuckets: "mlflow"
+  # -- MinIO port
   containerPort: "9000"
 
 postgresql:
@@ -48,6 +50,7 @@ postgresql:
   postgresqlPassword: "mlflow-pass"
   # -- Database name
   postgresqlDatabase: "mlflow"
+  # -- Database port
   postgresqlPort: "5432"
 
 artifact:
