@@ -17,8 +17,7 @@ helm install \
     --set minio.secretKey.password="secret-key" \
     --namespace="mlflow" \
     --create-namespace \
-    --generate-name \
-    .
+    mlflow .
 ```
 
 {{ template "chart.valuesSection" . }}

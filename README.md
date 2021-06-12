@@ -25,33 +25,48 @@ helm install \
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| affinity | object | `{}` |  |
 | artifact.root | string | `"s3://mlflow"` | Bucket path to store mlflow artifacts |
 | autoscaling.enabled | bool | `true` |  |
 | autoscaling.maxReplicas | int | `10` | Max replicas for the HPA |
 | autoscaling.minReplicas | int | `1` | Min replicas for the HPA |
-| autoscaling.targetCPUUtilizationPercentage | int | `70` | Target CPU utilization percentage |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"kelvinsp/mlflow"` |  |
 | image.tag | string | `"latest"` |  |
+| imagePullSecrets | list | `[]` |  |
+| ingress.annotations | object | `{}` |  |
+| ingress.enabled | bool | `false` |  |
+| ingress.hosts[0].host | string | `"chart-example.local"` |  |
+| ingress.hosts[0].paths[0].backend.serviceName | string | `"chart-example.local"` |  |
+| ingress.hosts[0].paths[0].backend.servicePort | int | `80` |  |
+| ingress.hosts[0].paths[0].path | string | `"/"` |  |
+| ingress.tls | list | `[]` |  |
 | minio.accessKey.password | string | `"access-key"` | MinIO access key password |
 | minio.containerPort | string | `"9000"` | MinIO port |
 | minio.defaultBuckets | string | `"mlflow"` | Buckets to be automatically created |
 | minio.secretKey.password | string | `"secret-key"` | MinIO secret key password |
 | nameOverride | string | `""` |  |
+| nodeSelector | object | `{}` |  |
+| podAnnotations | object | `{}` |  |
+| podSecurityContext | object | `{}` |  |
 | postgresql.postgresqlDatabase | string | `"mlflow"` | Database name |
 | postgresql.postgresqlPassword | string | `"mlflow-pass"` | Database password |
 | postgresql.postgresqlPort | string | `"5432"` | Database port |
 | postgresql.postgresqlUsername | string | `"mlflow-user"` | Database username |
-| resources.limits.cpu | string | `"800m"` |  |
-| resources.limits.memory | string | `"512Mi"` |  |
-| resources.requests.cpu | string | `"100m"` |  |
-| resources.requests.memory | string | `"128Mi"` |  |
+| replicaCount | int | `1` |  |
+| resources | object | `{}` |  |
 | restartPolicy | string | `"Always"` |  |
+| securityContext | object | `{}` |  |
 | service.port | int | `5000` |  |
 | service.targetPort | int | `5000` |  |
 | service.type | string | `"ClusterIP"` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.create | bool | `true` |  |
+| serviceAccount.name | string | `""` |  |
 | strategy | string | `"RollingUpdate"` |  |
+| tolerations | list | `[]` |  |
 
 ## Requirements
 
