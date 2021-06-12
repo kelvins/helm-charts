@@ -6,20 +6,21 @@ A Helm chart to deploy Mlflow server using MinIO as storage and PostgreSQL as da
 
 ## Installing the Chart
 
-To install the chart with the release name `my-release`:
+To install the chart with the release name `mlflow`:
 
 ```sh
-helm install \
-    --set postgresql.postgresqlUsername="mlflow-user" \
-    --set postgresql.postgresqlPassword="mlflow-pass" \
-    --set postgresql.postgresqlDatabase="mlflow" \
-    --set minio.accessKey.password="access-key" \
-    --set minio.secretKey.password="secret-key" \
-    --namespace="mlflow" \
-    --create-namespace \
-    --generate-name \
-    .
+helm install mlflow . --namespace mlflow --create-namespace
 ```
+
+## Uninstalling the Chart
+
+To uninstall/delete the `mlflow` release:
+
+```sh
+helm uninstall mlflow --namespace mlflow
+```
+
+The command removes all the Kubernetes components associated with the chart and deletes the release.
 
 ## Values
 
