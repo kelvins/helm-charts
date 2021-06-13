@@ -8,7 +8,7 @@
 
 ## Get Repo Info
 
-```sh
+```console
 helm repo add kelvins https://kelvins.github.io/helm-charts
 helm repo update
 ```
@@ -17,7 +17,7 @@ helm repo update
 
 To install the chart with the release name `mlflow`:
 
-```sh
+```console
 helm install mlflow . --namespace mlflow --create-namespace
 ```
 
@@ -25,7 +25,7 @@ helm install mlflow . --namespace mlflow --create-namespace
 
 To uninstall/delete the `mlflow` release:
 
-```sh
+```console
 helm uninstall mlflow --namespace mlflow
 ```
 

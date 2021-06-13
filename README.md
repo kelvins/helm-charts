@@ -14,7 +14,7 @@ Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 
 Once Helm is set up properly, add the repo as follows:
 
-```sh
+```console
 helm repo add kelvins https://kelvins.github.io/helm-charts
 helm repo update
 ```
