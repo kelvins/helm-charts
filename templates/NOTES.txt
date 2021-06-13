@@ -25,10 +25,11 @@ Get the application URL by running these commands:
 
 Storage (MinIO)
   Artifact Root: {{ .Values.artifactRoot }}
-  Access Key: {{ .Values.minio.accessKey.password }}
-  Secret Key: {{ .Values.minio.secretKey.password }}
+  Access Key:
+    kubectl get secret {{ include "mlflow.fullname" . }} --namespace {{ .Release.Namespace }} -o jsonpath='{.data.access-key}' | base64 --decode
+  Secret Key:
+    kubectl get secret {{ include "mlflow.fullname" . }} --namespace {{ .Release.Namespace }} -o jsonpath='{.data.secret-key}' | base64 --decode
 
 Database (PostgreSQL)
-  Database: {{ .Values.postgresql.postgresqlDatabase }}
-  Username: {{ .Values.postgresql.postgresqlUsername }}
-  Password: {{ .Values.postgresql.postgresqlPassword }}
+  Backend Store URI:
+    kubectl get secret {{ include "mlflow.fullname" . }} --namespace {{ .Release.Namespace }} -o jsonpath='{.data.backend-store-uri}' | base64 --decode
