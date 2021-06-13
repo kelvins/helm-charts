@@ -18,7 +18,7 @@ helm repo update
 To install the chart with the release name `mlflow`:
 
 ```console
-helm install mlflow . --namespace mlflow --create-namespace
+helm install my-release kelvins/mlflow
 ```
 
 ## Uninstalling the Chart
@@ -26,7 +26,7 @@ helm install mlflow . --namespace mlflow --create-namespace
 To uninstall/delete the `mlflow` release:
 
 ```console
-helm uninstall mlflow --namespace mlflow
+helm uninstall my-release
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
