@@ -6,7 +6,7 @@ The code is provided as-is with no warranties.
 
 ## Charts Available
 
-- [Mlflow](https://github.com/kelvins/charts/charts/mlflow)
+- [Mlflow](https://github.com/kelvins/helm-charts/charts/mlflow)
 
 ## Usage
 
@@ -15,7 +15,7 @@ Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 Once Helm is set up properly, add the repo as follows:
 
 ```sh
-helm repo add kelvins https://kelvins.github.io/charts
+helm repo add kelvins https://kelvins.github.io/helm-charts
 helm repo update
 ```
 
@@ -25,4 +25,4 @@ You can then run `helm search repo kelvins` to see the charts.
 
 ## Contributing
 
-Please refer to the [contribution guidelines](https://github.com/kelvins/charts/blob/main/CONTRIBUTING.md) for details.
+Please refer to the [contribution guidelines](https://github.com/kelvins/helm-charts/blob/main/CONTRIBUTING.md) for details.
