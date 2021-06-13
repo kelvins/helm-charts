@@ -13,6 +13,8 @@ helm repo add kelvins https://kelvins.github.io/helm-charts
 helm repo update
 ```
 
+_See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation._
+
 ## Installing the Chart
 
 To install the chart with the release name `mlflow`:
