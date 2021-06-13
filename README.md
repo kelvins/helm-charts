@@ -6,7 +6,7 @@ The code is provided as-is with no warranties.
 
 ## Charts Available
 
-- [Mlflow](https://github.com/kelvins/helm-charts/charts/mlflow)
+- [Mlflow](https://github.com/kelvins/helm-charts/tree/main/charts/mlflow)
 
 ## Usage
 
