@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  mlflow:
+  - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2021-06-13T23:20:43.886292998Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - database
+      version: 10.4.8
+    - name: minio
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: 6.7.16
+    description: A Helm chart to deploy Mlflow server using MinIO as storage and PostgreSQL as database.
+    digest: 1e6fa816d30307887819843f2acc1e32cf760d46b7cadc0d711c65b9dea7fc2b
+    name: mlflow
+    type: application
+    urls:
+    - https://github.com/kelvins/helm-charts/releases/download/mlflow-0.1.0/mlflow-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-06-13T23:20:43.666403191Z"
