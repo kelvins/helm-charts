@@ -24,7 +24,7 @@ Get the application URL by running these commands:
 {{- end }}
 
 Storage (MinIO)
-  Artifact Root: {{ .Values.artifact.root }}
+  Artifact Root: {{ .Values.artifactRoot }}
   Access Key: {{ .Values.minio.accessKey.password }}
   Secret Key: {{ .Values.minio.secretKey.password }}
 

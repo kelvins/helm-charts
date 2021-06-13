@@ -27,7 +27,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| artifact.root | string | `"s3://mlflow"` | Bucket path to store mlflow artifacts |
+| artifactRoot | string | `"s3://mlflow"` | Bucket path to store MLFlow artifacts |
 | autoscaling.enabled | bool | `true` |  |
 | autoscaling.maxReplicas | int | `10` | Max replicas for the HPA |
 | autoscaling.minReplicas | int | `1` | Min replicas for the HPA |
@@ -35,7 +35,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"kelvinsp/mlflow"` |  |
-| image.tag | string | `"latest"` |  |
+| image.tag | string | `"1.17.0"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |
@@ -44,18 +44,20 @@ The command removes all the Kubernetes components associated with the chart and 
 | ingress.hosts[0].paths[0].backend.servicePort | int | `80` |  |
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.tls | list | `[]` |  |
-| minio.accessKey.password | string | `"access-key"` | MinIO access key password |
-| minio.containerPort | string | `"9000"` | MinIO port |
-| minio.defaultBuckets | string | `"mlflow"` | Buckets to be automatically created |
-| minio.secretKey.password | string | `"secret-key"` | MinIO secret key password |
+| minio.accessKey.password | string | `"access-key"` | MinIO® Access Key |
+| minio.containerPort | string | `"9000"` | MinIO® container port to open |
+| minio.defaultBuckets | string | `"mlflow"` | Comma, semi-colon or space separated list of buckets to create |
+| minio.persistence.size | string | `"10Gi"` | PVC Storage Request for MinIO® data volume |
+| minio.secretKey.password | string | `"secret-key"` | MinIO® Secret Key |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| postgresql.postgresqlDatabase | string | `"mlflow"` | Database name |
-| postgresql.postgresqlPassword | string | `"mlflow-pass"` | Database password |
-| postgresql.postgresqlPort | string | `"5432"` | Database port |
-| postgresql.postgresqlUsername | string | `"mlflow-user"` | Database username |
+| postgresql.persistence.size | string | `"10Gi"` | PVC Storage Request for PostgreSQL volume |
+| postgresql.postgresqlDatabase | string | `"mlflow"` | PostgreSQL database |
+| postgresql.postgresqlPassword | string | `"mlflow-pass"` | PostgreSQL user password |
+| postgresql.postgresqlUsername | string | `"mlflow-user"` | PostgreSQL user |
+| postgresql.service.port | string | `"5432"` | PostgreSQL port |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | restartPolicy | string | `"Always"` |  |

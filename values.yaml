@@ -85,29 +85,35 @@ autoscaling:
 
 minio:
   accessKey:
-    # -- MinIO access key password
+    # -- MinIO® Access Key
     password: "access-key"
   secretKey:
-    # -- MinIO secret key password
+    # -- MinIO® Secret Key
     password: "secret-key"
-  # -- Buckets to be automatically created
+  # -- Comma, semi-colon or space separated list of buckets to create
   defaultBuckets: "mlflow"
-  # -- MinIO port
+  # -- MinIO® container port to open
   containerPort: "9000"
+  persistence:
+    # -- PVC Storage Request for MinIO® data volume
+    size: "10Gi"
 
 postgresql:
-  # -- Database username
+  # -- PostgreSQL user
   postgresqlUsername: "mlflow-user"
-  # -- Database password
+  # -- PostgreSQL user password
   postgresqlPassword: "mlflow-pass"
-  # -- Database name
+  # -- PostgreSQL database
   postgresqlDatabase: "mlflow"
-  # -- Database port
-  postgresqlPort: "5432"
+  service:
+    # -- PostgreSQL port
+    port: "5432"
+  persistence:
+    # -- PVC Storage Request for PostgreSQL volume
+    size: "10Gi"
 
-artifact:
-  # -- Bucket path to store mlflow artifacts
-  root: "s3://mlflow"
+# -- Bucket path to store MLFlow artifacts
+artifactRoot: "s3://mlflow"
 
 nodeSelector: {}
 

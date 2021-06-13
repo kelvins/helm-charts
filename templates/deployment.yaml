@@ -57,7 +57,7 @@ spec:
                   name: {{ include "mlflow.fullname" . }}
                   key: backend-store-uri
             - name: ARTIFACT_ROOT
-              value: {{ .Values.artifact.root }}
+              value: {{ .Values.artifactRoot }}
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:

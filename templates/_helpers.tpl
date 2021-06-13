@@ -80,5 +80,5 @@ Backend Store URI
 */}}
 {{- define "mlflow.backendStoreURI" -}}
 {{- $host := include "mlflow.databaseHost" . }}
-{{- printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword $host .Values.postgresql.postgresqlPort .Values.postgresql.postgresqlDatabase }}
+{{- printf "postgresql+psycopg2://%s:%s@%s:%s/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword $host .Values.postgresql.service.port .Values.postgresql.postgresqlDatabase }}
 {{- end }}
