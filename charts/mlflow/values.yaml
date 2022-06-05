@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: kelvinsp/mlflow
   pullPolicy: Always
-  tag: "1.19.0"
+  tag: "1.26.1"
 
 strategy: RollingUpdate
 
